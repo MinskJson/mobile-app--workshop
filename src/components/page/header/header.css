@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 .5px 0 0 #B3B3B3;
+  padding: 10px 10px 0;
 }
 
 /* .header-logo {

@@ -14,7 +14,7 @@ storiesOf('User', module)
       <User
         key={e} 
         isCircle={e % 3 === 0}
-        img={"https://placeimg.com/640/480/people"}
+        img={`https://placeimg.com/640/480/people/${e}`}
         name={`Joe Doe ${e}`} />)
     )}
   </User.Group>);
