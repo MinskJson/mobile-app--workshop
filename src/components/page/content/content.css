@@ -1,0 +1,5 @@
+.content {
+  overflow: auto;
+  max-height: calc(100vh - 34px - 86px);
+  height: calc(100vh - 34px - 86px);
+}
