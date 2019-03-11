@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-import { RouterProps } from "react-router";
+import { HashRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { PrivateRouter } from "./private/PrivateRouter";
 import { PublicRouter } from "./public/PublicRouter";
 

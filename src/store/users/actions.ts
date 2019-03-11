@@ -1,5 +1,6 @@
 import { USERS_GET_ALL, USERS_RESET, USERS_GET_BY_ID } from "./constants";
 import { UserType } from "../../models/UserType.model";
+import { PostType } from "../../models/PostType.model";
 
 export function usersGetAll(users: UserType[]) {
     return {
@@ -15,9 +16,12 @@ export function usersRest() {
     }
 }
 
-export function usersGetByID(user: UserType) {
+export function usersGetByID(currentUser: {
+    user: UserType,
+    posts: PostType[]
+}) {
     return {
         type: USERS_GET_BY_ID,
-        payload: user,
+        payload: currentUser,
     }
 }
