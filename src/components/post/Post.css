@@ -1,0 +1,31 @@
+.post {
+  height: 514px;
+}
+
+.post-header {
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.post-img__wr {
+  background: #ccc;
+  height: 340px;
+}
+
+.post-img__img {
+  display: block;
+  height: 340px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.post {
+  --like-filled: white;
+  --like-border: #000000;
+}
+
+.post--liked {
+  --like-filled: #C8002A;
+  --like-border: #C8002A;
+}
