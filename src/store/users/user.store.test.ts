@@ -1,6 +1,6 @@
 import {store} from '../index';
-import * as userActions from "../users/actions";
-import * as userApi from "../../api/user.api";
+import * as userActions from "./actions";
+import * as userApi from "./user.api";
 
 describe('store -> user reducer', ()=> {
   it('users exists', () => {

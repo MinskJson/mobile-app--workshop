@@ -1,6 +1,6 @@
 import { USERS_GET_ALL, USERS_GET_BY_ID, USERS_RESET } from "./constants";
-import { UserType } from "../../models/UserType.model";
-import { PostType } from "../../models/PostType.model";
+import { UserType } from "./UserType.model";
+import { PostType } from "../post/PostType.model";
 
 type CurrentUserType = {
   user: UserType | null,

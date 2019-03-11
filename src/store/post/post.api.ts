@@ -1,15 +1,6 @@
 // import axios from "axios";
-import { UserType } from "../models/UserType.model";
-import { PostType } from "../models/PostType.model";
-
-const generateUser = () => {
-  return {
-    id: Math.random(),
-    img: "https://placeimg.com/640/480/people",
-    name: "Joe" + Math.random(),
-    posts: [],
-  }
-}
+// import { UserType } from "../models/UserType.model";
+import { PostType } from "./PostType.model";
 
 const generatePost = () => {
   return {
@@ -20,19 +11,16 @@ const generatePost = () => {
   };
 }
 
-export const getUsers = async ():Promise<UserType[]> => {
+export const getPosts = async ():Promise<PostType[]> => {
   return new Promise(res => {
-    res(new Array(100).fill(0).map(() => generateUser()));
+    res(new Array(100).fill(0).map(() => generatePost()));
   });
   // axios.get('/api/users').finally(() => {})
 }
 
-export const getUser = async (id: number):Promise<{user: UserType, posts: PostType[]}> => {
+export const togglePostLike = async (userId: number, postId: number):Promise<PostType> => {
   return new Promise(res => {
-    res({
-      user: generateUser(),
-      posts: new Array(100).fill(0).map(() => generatePost())
-    });
+    res(generatePost());
   });
   // axios.get('/api/users').finally(() => {})
 }

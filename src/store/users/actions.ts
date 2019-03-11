@@ -1,6 +1,6 @@
 import { USERS_GET_ALL, USERS_RESET, USERS_GET_BY_ID } from "./constants";
-import { UserType } from "../../models/UserType.model";
-import { PostType } from "../../models/PostType.model";
+import { UserType } from "./UserType.model";
+import { PostType } from "../post/PostType.model";
 
 export function usersGetAll(users: UserType[]) {
     return {

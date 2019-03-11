@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 import { Page } from "../../../components/page/Page";
 import { StoreStateType } from "../../../store";
 import { Dispatch } from "redux";
-import { getUser } from "../../../api/user.api";
+import { getUser } from "../../../store/users/user.api";
 import { usersGetByID } from "../../../store/users/actions";
 import { connect } from "react-redux";
-import { UserType } from "../../../models/UserType.model";
-import { PostType } from "../../../models/PostType.model";
+import { UserType } from "../../../store/users/UserType.model";
+import { PostType } from "../../../store/post/PostType.model";
 
 type DetailsProps = {
   currentUser: {

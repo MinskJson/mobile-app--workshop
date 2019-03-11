@@ -2,10 +2,10 @@ import React, { useEffect } from "react";
 import { Page } from "../../../components/page/Page";
 import { User } from "../../../components/user/User";
 import { MemoryHistory } from "history";
-import { UserType } from "../../../models/UserType.model";
+import { UserType } from "../../../store/users/UserType.model";
 import { connect } from "react-redux";
 import { StoreStateType } from "../../../store";
-import { getUsers } from "../../../api/user.api";
+import { getUsers } from "../../../store/users/user.api";
 import { usersGetAll } from "../../../store/users/actions";
 import { Dispatch } from "redux";
 
