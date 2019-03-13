@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@craco/craco": "^3.6.0",
     "@types/jest": "24.0.9",
     "@types/node": "11.10.4",
     "@types/react": "^16.8.6",
@@ -13,6 +14,7 @@
     "@types/storybook__react": "^4.0.1",
     "antd": "^3.15.0",
     "axios": "^0.18.0",
+    "craco-antd": "^1.10.0",
     "isomorphic-fetch": "^2.2.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
@@ -23,10 +25,10 @@
     "typescript": "3.3.3333"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -45,6 +47,7 @@
     "@storybook/addon-links": "^5.0.0",
     "@storybook/addons": "^5.0.0",
     "@storybook/react": "^5.0.0",
-    "babel-loader": "^8.0.5"
+    "babel-loader": "^8.0.5",
+    "webpack-bundle-analyzer": "^3.1.0"
   }
 }

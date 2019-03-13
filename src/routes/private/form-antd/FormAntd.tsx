@@ -2,7 +2,6 @@ import React from "react";
 import { Form, Input, Button } from 'antd';
 import { Page } from "../../../components/page/Page";
 import { FormComponentProps } from "antd/lib/form";
-import 'antd/dist/antd.css';
 import './form.css';
 
 type FormProps = {
@@ -68,6 +67,4 @@ const FormPageWithForm = Form.create()(FormPage);
 const RenderForm = () => {
   return <FormPageWithForm model={{name: "xXX", secondName: "JOE"}} />
 }
-export {
-  RenderForm as FormAntd
-}
+export default RenderForm;
