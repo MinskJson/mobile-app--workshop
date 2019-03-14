@@ -28,7 +28,7 @@ const Clock = () => {
   const currentTime = getCurrentTime();
 
   return <div className='clock'>
-    {currentTime.hours}:{currentTime.minutes}:{currentTime.seconds}
+    {currentTime.hours.toString().padStart(2, '0')}:{currentTime.minutes.toString().padStart(2, '0')}:{currentTime.seconds.toString().padStart(2, '0')}
   </div>
 }
 
@@ -57,8 +57,8 @@ const Timer = () => {
   return <Page>
     <Page.Header/>
     <Page.Content>
-      <Clock />
       <AnalogClock />
+      <Clock />
     </Page.Content>
     <Page.Footer/>
   </Page>
