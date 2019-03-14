@@ -4,6 +4,7 @@ import { Home } from "./home/Home";
 import { Details } from "./details/Details";
 import { Form } from "./form/Form";
 import { Effects } from "./effects/Effects";
+import { Recursion } from "./recursion/Recursion";
 
 //@ts-ignore
 const FormAtnd = lazy(() => import(/* webpackChunkName: "form-antd" */ "./form-antd/FormAntd"));
@@ -35,6 +36,7 @@ const PrivateRouter = ({match}: PrivateRouterProps) => {
         <Route path={`${match.path}/form`} exact component={Form} />
         <Route path={`${match.path}/more-antd`} exact component={MoreAntdSuspence} />
         <Route path={`${match.path}/effects`} exact component={Effects} />
+        <Route path={`${match.path}/recursion`} exact component={Recursion} />
 
         <Route path={`${match.path}/details/:userId`} component={Details} />
         <Redirect path="/" to={`${match.path}/home`} />
