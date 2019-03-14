@@ -5,10 +5,17 @@ import { Details } from "./details/Details";
 import { Form } from "./form/Form";
 
 //@ts-ignore
-const FormAtnd = lazy(() => import("./form-antd/FormAntd"));
+const FormAtnd = lazy(() => import(/* webpackChunkName: "form-antd" */ "./form-antd/FormAntd"));
 const FormAntdSuspence = () => {
   return <Suspense fallback={<div>Loading...</div>}>
     <FormAtnd />
+  </Suspense>
+}
+
+const MoreAtnd = lazy(() => import(/* webpackChunkName: "more-antd" */ "./more-antd/MoreAntd"));
+const MoreAntdSuspence = () => {
+  return <Suspense fallback={<div>Loading...</div>}>
+    <MoreAtnd />
   </Suspense>
 }
 
@@ -25,6 +32,7 @@ const PrivateRouter = ({match}: PrivateRouterProps) => {
         <Route path={`${match.path}/home`} exact component={Home} />
         <Route path={`${match.path}/form-antd`} exact component={FormAntdSuspence} />
         <Route path={`${match.path}/form`} exact component={Form} />
+        <Route path={`${match.path}/more-antd`} exact component={MoreAntdSuspence} />
 
         <Route path={`${match.path}/details/:userId`} component={Details} />
         <Redirect path="/" to={`${match.path}/home`} />
