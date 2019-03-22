@@ -2,11 +2,15 @@ import React, { useEffect, useState, useCallback, useReducer, useContext, create
 import { Page } from "../../../components/page/Page";
 import { Button, Input } from "antd";
 
-const StoreContext = createContext({count: 0,   actions: {
-  onAdd: (e: string) =>{},
-  onRemove: (e: string) =>{},
-  onDivide: (e: string) =>{},
-}});
+const StoreContext = createContext({
+  count: 0,
+  actions: {
+    onAdd: (e: string) =>{},
+    onRemove: (e: string) =>{},
+    onDivide: (e: string) =>{},
+  }
+});
+
 const initialState = {
   count: 0,
 }
