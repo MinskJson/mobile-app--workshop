@@ -1,28 +1,7 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useState } from "react";
 import { Page } from "../../../components/page/Page";
 import { Empty, Button } from "antd";
-
-const currentWidth = (ref?: HTMLBaseElement) => {
-  const [width, setWidth] = useState(0);
-  const currentElement = ref || window;
-  const onResize = useCallback((e) => {
-    // @ts-ignore
-    setWidth(currentElement.clientWidth || currentElement.innerWidth);
-  }, [currentElement]);
-
-  useEffect(() => {
-    // @ts-ignore
-    setWidth(currentElement.clientWidth || currentElement.innerWidth);
-    window.removeEventListener('resize', onResize);
-    window.addEventListener('resize', onResize);
-
-    return () => {
-      window.removeEventListener('resize', onResize);
-    };
-  }, [currentElement]);
-
-  return width;
-}
+import { currentWidth } from "../../../components/currentWidth/CurrentWidth";
 
 const ComponentSome = () => {
   return <Button>Button</Button>

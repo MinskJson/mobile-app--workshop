@@ -3,6 +3,8 @@ import {PostHeader} from './PostHeader';
 import likeSvg from './like.svg';
 import likeFilledSvg from './like-filled.svg';
 import './Post.css';
+import { currentWidth } from "../currentWidth/CurrentWidth";
+import { Breakpoints } from "../currentWidth/Breakpoints";
 
 export type PostItemType = {
   id: number;
@@ -31,7 +33,6 @@ type PostType = {
   query?: string;
 };
 
-
 const Post = ({isLiked, item, query}: PostType) => {
   const [currentLike, setCurrentLike] = useState(isLiked);
 
@@ -43,19 +44,43 @@ const Post = ({isLiked, item, query}: PostType) => {
     [currentLike]);
 
   return <div className="post post-liked">
-    <PostHeader
-      image="https://placeimg.com/640/480/people"
-      name={name}
-      address={`${item.prices.price_min.amount} ${item.prices.price_min.currency} - ${item.prices.price_max.amount} ${item.prices.price_max.currency}`} />
-    <div className="post-img__wr">
-      <img className="post-img__img" src={item.images.header} />
-    </div>
-    <div className="post-footer">
-      <img src={ currentLike ? likeFilledSvg: likeSvg} onClick={onLikeClick} />
-      <p>
-        {item.description}
-      </p>
-    </div>
+    <Breakpoints>
+      <Breakpoints.Mobile>
+        <div className="post-img__wr">
+          <img className="post-img__img" src={item.images.header} />
+        </div>
+      </Breakpoints.Mobile>
+      <Breakpoints.Tablet>
+        <PostHeader
+          image="https://placeimg.com/640/480/people"
+          name={name}
+          address={`${item.prices.price_min.amount} ${item.prices.price_min.currency} - ${item.prices.price_max.amount} ${item.prices.price_max.currency}`} />
+        <div className="post-img__wr">
+          <img className="post-img__img" src={item.images.header} />
+        </div>
+        <div className="post-footer">
+          <img src={ currentLike ? likeFilledSvg: likeSvg} onClick={onLikeClick} />
+          <p>
+            {item.description}
+          </p>
+        </div>
+      </Breakpoints.Tablet>
+      <Breakpoints.Desctop>
+        <PostHeader
+          image="https://placeimg.com/640/480/people"
+          name={name}
+          address={`${item.prices.price_min.amount} ${item.prices.price_min.currency} - ${item.prices.price_max.amount} ${item.prices.price_max.currency}`} />
+        <div className="post-img__wr">
+          <img className="post-img__img" src={item.images.header} />
+        </div>
+        <div className="post-footer">
+          <img src={ currentLike ? likeFilledSvg: likeSvg} onClick={onLikeClick} />
+          <p>
+            {item.description}
+          </p>
+        </div>
+      </Breakpoints.Desctop>
+    </Breakpoints>
   </div>
 }
 

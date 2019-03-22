@@ -1,0 +1,15 @@
+.home__posts {
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .home__posts {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .post {
+    flex: 1;
+    min-width: 300px;
+  }
+}

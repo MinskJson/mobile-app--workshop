@@ -16,6 +16,8 @@ import { filtredProducts, filtredProductsByCost } from "./filter";
 import { useTranslation, withTranslation, TranslationProps } from "react-i18next";
 import i18next from "i18next";
 
+import './Home.css';
+
 // @ts-ignore
 const productsItems = products.products as PostItemType[];
 
@@ -71,7 +73,7 @@ const Home = ({history, users, usersGetAll, match}: HomeProps) => {
           name={user.name} />)
       )}
       </User.Group> */}
-      <div>
+      <div className="home__posts">
         {
           fProducts.map(e => {
             return <Post key={e.id} item={e as PostItemType} query={searchQuery} isLiked />
